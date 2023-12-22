@@ -1,0 +1,47 @@
+<div class="formulario">
+  <h2 class="center">Formulario de registro</h2>
+  <div style="display: flex">
+    <div class="" style="width: 50%">
+      <label for="id">ID:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="id"
+        disabled
+        [(ngModel)]="newItemId"
+      />
+    </div>
+    <div class="" style="width: 50%">
+      <label for="nombre">Nombre:</label>
+      <input type="text" [(ngModel)]="newItemName" />
+    </div>
+  </div>
+
+  <div style="display: flex">
+    <div class="" style="width: 50%">
+      <label for="descripcion">Descripción</label>
+      <input type="text" [(ngModel)]="newItemDescription" />
+    </div>
+    <div>
+      <label for="logo">Logo</label>
+      <input type="text" [(ngModel)]="newItemLogo" />
+    </div>
+  </div>
+
+  <div style="display: flex">
+    <div class="" style="width: 50%">
+      <label for="fecha1">Fecha de Liberación</label>
+      <input type="date" [(ngModel)]="newItemFechaLib" />
+    </div>
+    <div style="width: 50%">
+      <label for="fechaRestructuracion">Fecha de restructuración</label>
+      <input type="date" [(ngModel)]="newItemFechaRestr" />
+    </div>
+  </div>
+
+  <div class="center" style="display: inherit">
+    <button class="btnVolver" (click)="volver()">Volver</button>
+    <button class="btnReiniciar" (click)="resetForm()">Reiniciar</button>
+    <button class="btnEnviar" (click)="enviarItem()">Enviar Datos</button>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tabla de Productos</title>
+  </head>
+  <body>
+    <h2>Tabla de Productos</h2>
+    <table class="center">
+      <div>
+        <form class="buscador">
+          <input type="text" [(ngModel)]="terminoBusqueda" placeholder="Buscar productos..."/>
+        </form>
+        <button class="btnAgregar" (click)="agregarItem()">Agregar</button>
+      </div>
+      <tr>
+        <th>Logo</th>
+        <th>Nombre del producto</th>
+        <th>Descripción</th>
+        <th>Fecha de liberación</th>
+        <th>Fecha de reestructuración</th>
+        <th>Acciones</th>
+      </tr>
+      @for (item of items; track item ) {
+      <tr>
+        <td>{{ item.logo }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.descripcion }}</td>
+        <td>{{ item.fechaLiberacion }}</td>
+        <td>{{ item.fechaRestructuracion }}</td>
+        <td class="acciones">
+          <a class="btnEditar" href="/editar/{{ item.id }}"> Editar</a>
+          <button class="btnEliminar" (click)="confirmarEliminar(item)">
+            Eliminar
+          </button>
+        </td>
+      </tr>
+      }
+    </table>
+  </body>
+</html>
